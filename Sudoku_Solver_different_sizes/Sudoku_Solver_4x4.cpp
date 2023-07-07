@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define n 16
+#define n 4
 using namespace std;
 bool isSafeStep(int row, int col, int grid[n][n], int value)
 {
@@ -11,8 +11,8 @@ bool isSafeStep(int row, int col, int grid[n][n], int value)
         // column check
         if (grid[i][col] == value)
             return false;
-        // 4x4 matrix check
-        if (grid[sqrt(n) * (row / sqrt(n)) + i / sqrt(n)][sqrt(n) * (col / sqrt(n)) + i % sqrt(n)] == value)
+        // 2x2 matrix check
+        if (grid[2 * (row / 2) + i / 2][2 * (col / 2) + i % 2] == value)
             return false;
     }
     return true;
